@@ -7,15 +7,14 @@ module.exports = {
             name: "Default Theme",
             author: "SkyCrypt Team",
             official: true,
-            logo: "https://sky.shiiyu.moe/resources/img/logo_square.png",
+            logo: "../img/logo_square.png",
             backgrounds: {
                 "bg": {
-                    "png": "https://sky.shiiyu.moe/resources/img/bg.png?v3",
-                    "webp": "https://sky.shiiyu.moe/resources/img/bg.webp?v3"
+                    "png": "../img/bg.png?v3",
+                    "webp": "../img/bg.webp?v3"
                 },
                 "bg_blur": {
-                    "png": "https://sky.shiiyu.moe/resources/img/bg_blur.png?v3",
-                    "webp": "https://sky.shiiyu.moe/resources/img/bg_blur.webp?v3"
+                    "webp": "../img/bg_blur.webp?v3"
                 }
             },
             colors: {
@@ -33,15 +32,14 @@ module.exports = {
             name: "sky.lea.moe",
             author: "LeaPhant",
             official: true,
-            logo: "https://sky.lea.moe/resources/img/logo_square.png",
+            logo: "../img/themes/skylea/logo_square.png",
             backgrounds: {
                 "bg": {
-                    "png": "https://sky.lea.moe/resources/img/bg.png",
-                    "webp": "https://sky.lea.moe/resources/img/bg.webp"
+                    "png": "../img/themes/skylea/bg.png",
+                    "webp": "../img/themes/skylea/bg.webp"
                 },
                 "bg_blur": {
-                    "png": "https://sky.lea.moe/resources/img/bg_blur.png",
-                    "webp": "https://sky.lea.moe/resources/img/bg_blur.webp"
+                    "webp": "../img/themes/skylea/bg_blur.webp"
                 }
             },
             colors: {
@@ -55,11 +53,77 @@ module.exports = {
                 maxedbar: "#CE8F12"
             }
         },
+        "nightblue": {
+            name: "Night Blue Theme",
+            author: "8KCoffeeWizard",
+            community: true,
+            logo: "../img/themes/nightblue/logo_square.png",
+            backgrounds: {
+                "bg": {
+                    "png": "../img/themes/nightblue/bg.png",
+                    "webp": "../img/themes/nightblue/bg.webp"
+                },
+                "bg_blur": {
+                    "webp": "../img/themes/nightblue/bg_blur.webp"
+                }
+            },
+            colors: {
+                icon: "#3BB9FF",
+                line: "#0E8DCA",
+                link: "#00FFFB",
+                hover: "#0BAFCA",
+                skillbar: "#3BB9FF"
+            }
+        },
+        "sunrise": {
+            name: "Sunrise Orange Theme",
+            author: "rainbowcraft2",
+            community: true,
+            logo: "../img/themes/sunrise/logo_square.png",
+            backgrounds: {
+                "bg": {
+                    "png": "../img/themes/sunrise/bg.png",
+                    "webp": "../img/themes/sunrise/bg.webp"
+                },
+                "bg_blur": {
+                    "webp": "../img/themes/sunrise/bg_blur.webp"
+                }
+            },
+            colors: {
+                line: "#f2694e",
+                link: "#F2694E",
+                icon: "#F2694E",
+                hover: "#ff9d57",
+                skillbar: "#f2694e"
+            }
+        },
+        "draconic": {
+            name: "Draconic Purple Theme",
+            author: "rainbowcraft2",
+            community: true,
+            logo: "../img/themes/draconic/logo_square.png",
+            backgrounds: {
+                "bg": {
+                    "png": "../img/themes/draconic/bg.png",
+                    "webp": "../img/themes/draconic/bg.webp"
+                },
+                "bg_blur": {
+                    "webp": "../img/themes/draconic/bg_blur.webp"
+                }
+            },
+            colors: {
+                line: "#7652b1",
+                link: "#7652b1",
+                icon: "#ba5fde",
+                hover: "#ba5fde",
+                skillbar: "#ba5fde"
+            }
+        },
 
         /* Hidden Themes */
         /* I have no idea if this theme is mentally sane so lmao */
         
-         "warpwing": {
+        "warpwing": {
             name: "Forest Walk",
             author: "WarpWing",
             hidden: true,
@@ -80,30 +144,6 @@ module.exports = {
                 link: "#00aabb",
                 hover: "#00aabb",
                 skillbar: "#00aabb"
-            }
-        },
-
-        "nightblue": {
-            name: "Night Blue Theme",
-            author: "8KCoffeeWizard",
-            hidden: true,
-            logo: "https://i.imgur.com/4SFZGdj.png",
-            backgrounds: {
-                "bg": {
-                    "png": "https://i.imgur.com/qjsmQ4B.png",
-                    "webp": "https://i.imgur.com/qjsmQ4B.png"
-                },
-                "bg_blur": {
-                    "png": "https://i.imgur.com/yVqoyvZ.png",
-                    "webp": "https://i.imgur.com/yVqoyvZ.png"
-                }
-            },
-            colors: {
-                icon: "#3BB9FF",
-                line: "#0E8DCA",
-                link: "#00FFFB",
-                hover: "#0BAFCA",
-                skillbar: "#3BB9FF"
             }
         }
     }

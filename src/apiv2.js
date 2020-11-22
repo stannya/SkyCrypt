@@ -45,6 +45,10 @@ module.exports = (app, db) => {
                 leaderboards.push(lb);
         }
 
+        leaderboards.sort((a, b) => {
+            return a.key.localeCompare(b.key);
+        })
+
         resolve();
     });
 
@@ -365,6 +369,64 @@ module.exports = (app, db) => {
                     slayers: data.slayers,
                     slayer_bonus: data.slayer_bonus,
                     slayer_coins_spent: data.slayer_coins_spent
+                };
+            }
+
+            res.json(output);
+        } catch (e) {
+            handleError(e, res);
+        }
+    });
+
+    app.all('/api/v2/dungeons/:player/:profile', cors(), async (req, res) => {
+        try {
+            const { profile, allProfiles } = await lib.getProfile(db, req.params.player, null, { cacheOnly: req.cacheOnly });
+
+            let output = {
+                error: "Invalid Profile Name!"
+            };
+
+            for (const singleProfile of allProfiles) {
+
+                const cute_name = singleProfile.cute_name;
+
+                if (cute_name.toLowerCase() != req.params.profile.toLowerCase())
+                    continue;
+
+                const userProfile = singleProfile.members[profile.uuid];
+                const hypixelProfile = await helper.getRank(profile.uuid, db);
+
+                const dungeonData = await lib.getDungeons(userProfile, hypixelProfile);
+
+                output = {
+                    profile_id: singleProfile.profile_id,
+                    cute_name: singleProfile.cute_name,
+                    dungeonData
+                };
+            }
+
+            res.json(output);
+        } catch (e) {
+            handleError(e, res);
+        }
+    });
+
+    app.all('/api/v2/dungeons/:player', cors(), async (req, res) => {
+        try {
+            const { profile, allProfiles } = await lib.getProfile(db, req.params.player, null, { cacheOnly: req.cacheOnly });
+
+            const output = { profiles: {} };
+
+            for (const singleProfile of allProfiles) {
+                const userProfile = singleProfile.members[profile.uuid];
+                const hypixelProfile = await helper.getRank(profile.uuid, db);
+
+                const dungeonData = await lib.getDungeons(userProfile, hypixelProfile);
+
+                output.profiles[singleProfile.profile_id] = {
+                    profile_id: singleProfile.profile_id,
+                    cute_name: singleProfile.cute_name,
+                    dungeons: dungeonData
                 };
             }
 
